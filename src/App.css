@@ -1,19 +1,92 @@
+/* App.css */
 
-.hero-container{
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* General styling for the Navbar */
+  .navbar {
+    margin-bottom: 20px;
+  }
+  
+  .hero-container {
     position: relative;
     z-index: 100;
-}
-.hero-text{
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  .hero-text {
     position: relative;
     z-index: 200;
-}
-.hero-backdrop{
+    color: white;
+    font-size: 2em;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  }
+  
+  .hero-backdrop {
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background-size: cover ;
+    background-size: cover;
     background-position: center center;
     opacity: 0.4;
-}
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 1200px) {
+    .hero-text {
+      font-size: 1.8em;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .hero-text {
+      font-size: 1.5em;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-text {
+      font-size: 1.2em;
+    }
+    
+    .navbar-nav {
+      text-align: center;
+    }
+    
+    .navbar-nav .nav-item {
+      margin-bottom: 10px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .hero-text {
+      font-size: 1em;
+    }
+    
+    .navbar-nav {
+      display: block;
+    }
+    
+    .navbar-nav .nav-item {
+      margin-bottom: 5px;
+    }
+    
+    .form-control {
+      margin-bottom: 10px;
+    }
+  }
+  @media (max-width: 575.98px) {
+    .navbar .form-control {
+      width: 70%;
+    }
+    .navbar .btn {
+      width: 30%;
+    }
+  }  

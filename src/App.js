@@ -11,6 +11,7 @@ import {Switch, Route} from 'react-router-dom';
 
 // https://api.themoviedb.org/3/movie/157336?api_key=faa71393067807a953fcc43f052a5d21&append_to_response=videos
 
+
 function App() {
     const [SearchResults , setSearchResults] = useState([]);
     const [SearchText, setSearchText] = useState('');
