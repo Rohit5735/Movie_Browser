@@ -3,10 +3,13 @@ import { useHistory, Link, NavLink } from 'react-router-dom';
 const Navbar = ({ SearchText, setSearchText }) => {
   const history = useHistory();
 
-  const UpdateSearchText = (e) => {
-    e.preventDefault();  // Prevent default form submission
-    history.push('/SearchView');
+  const handleInputChange = (e) => {
     setSearchText(e.target.value);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    history.push('/SearchView');
   };
 
   return (
@@ -26,8 +29,8 @@ const Navbar = ({ SearchText, setSearchText }) => {
                 Dropdown
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a className="dropdown-item" exact to='/'>Home</a></li>
-                <li><a className="dropdown-item" to="/about" >About Us</a></li>
+                <li><NavLink className="dropdown-item" exact to='/'>Home</NavLink></li>
+                <li><NavLink className="dropdown-item" to="/about">About Us</NavLink></li>
                 <li><hr className="dropdown-divider" /></li>
                 <li><a className="dropdown-item" href="#">Something else here</a></li>
               </ul>
@@ -39,8 +42,8 @@ const Navbar = ({ SearchText, setSearchText }) => {
               <NavLink className="nav-link" to='/comingsoon'>Coming Soon</NavLink>
             </li>
           </ul>
-          <form className="d-flex" onSubmit={UpdateSearchText}>
-            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={SearchText} onChange={UpdateSearchText} />
+          <form className="d-flex" onSubmit={handleSearchSubmit}>
+            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={SearchText} onChange={handleInputChange} />
             <button className="btn btn-outline-success" type="submit">Search</button>
           </form>
         </div>

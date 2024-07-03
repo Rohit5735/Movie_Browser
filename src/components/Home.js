@@ -9,6 +9,7 @@ const Home = ()=>{
                 <p className="lead">
                   hi how are you, you came to the MovieBrowser main page,
                   here you will get all kind of movies...
+                  
                 </p>
             </div>
           </div>
